@@ -16,6 +16,17 @@
 	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
 	<!-- main css -->
 	<link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "gjQgKpb4fiBWN07ov",
+        });
+    })();
+    </script>
+    <script src="./js/form_submit.js"></script>
 </head>
 
 <body>
@@ -36,11 +47,11 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
 							<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
 							<li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+							<li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -89,7 +100,7 @@
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                    <form class="row contact_form" id="contactForm" novalidate="novalidate">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
@@ -107,7 +118,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 text-right">
-                            <button type="submit" value="submit" class="primary_btn">
+                            <button type="submit" value="submit" class="primary_btn" onclick="sendMail()">
                                 <span>Send Message</span>
                             </button>
                         </div>
